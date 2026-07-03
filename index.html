@@ -1,142 +1,269 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Mysura Reddy Kuchuru — Data Engineer, Analytics Engineer, and Data Analyst building trustworthy data and AI systems."
-    />
-    <title>Mysura Reddy Kuchuru | Data & AI</title>
+    <meta name="theme-color" content="#080b10" />
+    <meta name="description" content="Mysura Reddy Kuchuru — Data Engineer, Analytics Engineer, and Data Analyst building trustworthy data and AI systems." />
+    <meta property="og:title" content="Mysura Reddy Kuchuru — Data & AI Portfolio" />
+    <meta property="og:description" content="Pipelines, analytics systems, data quality, and credible paths toward AI and ML." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mysurakuchuru.github.io/" />
+    <title>Mysura Reddy Kuchuru — Data & AI Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="grid-bg" aria-hidden="true"></div>
-    <header class="nav-shell">
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#top"><span>MRK</span><small>data / ai</small></a>
-        <div class="nav-links">
-          <a href="#work">Work</a>
-          <a href="#systems">Systems</a>
-          <a href="#experience">Experience</a>
-          <a class="nav-cta" href="mailto:kuchurumysurareddy@gmail.com">Connect</a>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+    <header class="site-header">
+      <a class="wordmark" href="#whoami" aria-label="Home">
+        <span class="prompt-mark">~/</span>mysura<span class="cursor-mark">_</span>
+      </a>
+      <nav class="top-nav" aria-label="Utility navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="resume.html">Resume</a>
+        <a href="https://github.com/mysurakuchuru" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <button class="icon-button" id="command-button" type="button" aria-label="Open command menu">⌘K</button>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme">◐</button>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero section">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="pulse"></span> Building decision systems from raw data</p>
-          <h1>Data foundations.<br /><span>Intelligent futures.</span></h1>
-          <p class="hero-text">
-            I’m Mysura Reddy Kuchuru—a Data Engineer, Analytics Engineer, and Data Analyst
-            creating reliable pipelines, dimensional models, dashboards, and responsible paths
-            toward AI and ML.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">Explore the work</a>
-            <a class="button secondary" href="https://github.com/mysurakuchuru">GitHub ↗</a>
-          </div>
-          <div class="role-strip" aria-label="Target roles">
-            <span>Data Engineering</span><span>Analytics Engineering</span><span>Data Analysis</span>
-          </div>
+    <div class="workspace">
+      <aside class="toc" aria-label="Table of contents">
+        <div class="toc-title"><span>┌</span> toc[≡] <span>nav ▎</span></div>
+        <p class="toc-path">~/mysura-kuchuru</p>
+        <a href="#whoami" data-section="whoami"><b>00</b><span>whoami</span></a>
+        <a href="#featured" data-section="featured"><b>01</b><span>featured</span></a>
+        <a href="#skills" data-section="skills"><b>02</b><span>skills</span></a>
+        <a href="#experience" data-section="experience"><b>03</b><span>experience</span></a>
+        <a href="#projects" data-section="projects"><b>04</b><span>projects</span></a>
+        <a href="#architecture" data-section="architecture"><b>05</b><span>architecture</span></a>
+        <a href="#education" data-section="education"><b>06</b><span>education</span></a>
+        <a href="#roadmap" data-section="roadmap"><b>07</b><span>roadmap</span></a>
+        <a href="#contact" data-section="contact"><b>08</b><span>contact</span></a>
+        <div class="toc-system">
+          <span><i class="status-dot"></i> portfolio online</span>
+          <span>UTC−04:00 / CLT</span>
+        </div>
+      </aside>
+
+      <main id="main" class="terminal-shell">
+        <div class="terminal-bar">
+          <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="terminal-path">guest@mysura: ~/portfolio</div>
+          <div class="terminal-meta"><span>main</span><span>verified</span></div>
         </div>
 
-        <div class="signal-card reveal" aria-label="Portfolio system signal">
-          <div class="signal-head"><span>portfolio.signal</span><span class="live">LIVE</span></div>
-          <div class="metric"><small>curated taxi records</small><strong>14.17M</strong></div>
-          <div class="signal-chart" aria-hidden="true">
-            <i style="--h: 38%"></i><i style="--h: 53%"></i><i style="--h: 44%"></i>
-            <i style="--h: 71%"></i><i style="--h: 62%"></i><i style="--h: 88%"></i>
-            <i style="--h: 78%"></i><i style="--h: 96%"></i><i style="--h: 83%"></i>
-          </div>
-          <div class="signal-grid">
-            <span><small>pipeline</small><b>healthy</b></span>
-            <span><small>quality</small><b>tested</b></span>
-            <span><small>direction</small><b>AI-ready</b></span>
-          </div>
-        </div>
-      </section>
+        <div class="terminal-content">
+          <section id="whoami" class="terminal-section hero-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ cat profile.md</p>
+            <pre class="ascii" aria-label="Mysura">███╗   ███╗██╗   ██╗███████╗██╗   ██╗██████╗  █████╗
+████╗ ████║╚██╗ ██╔╝██╔════╝██║   ██║██╔══██╗██╔══██╗
+██╔████╔██║ ╚████╔╝ ███████╗██║   ██║██████╔╝███████║
+██║╚██╔╝██║  ╚██╔╝  ╚════██║██║   ██║██╔══██╗██╔══██║
+██║ ╚═╝ ██║   ██║   ███████║╚██████╔╝██║  ██║██║  ██║
+╚═╝     ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝</pre>
 
-      <section id="work" class="section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Selected systems</p>
-          <h2>Proof, not buzzwords.</h2>
-          <p>Completed projects with measurable outcomes, reproducible code, and honest roadmaps.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project featured reveal">
-            <div class="project-number">01 / FLAGSHIP</div>
-            <h3>NYC Taxi Analytics Platform</h3>
-            <p>14.9M raw trips transformed into a tested PostgreSQL warehouse, dbt models, analytics views, and a Tableau decision layer.</p>
-            <div class="tags"><span>Python</span><span>PostgreSQL</span><span>dbt</span><span>Tableau</span></div>
-            <a href="https://github.com/mysurakuchuru/nyc-taxi-analytics-platform">View system ↗</a>
-          </article>
-          <article class="project reveal">
-            <div class="project-number">02 / CLOUD</div>
-            <h3>AWS Sales Data Lake</h3>
-            <p>Serverless batch engineering with S3, Glue, PySpark, Parquet, IAM, and CloudFormation.</p>
-            <div class="tags"><span>AWS</span><span>PySpark</span><span>Data Lake</span></div>
-            <a href="https://github.com/mysurakuchuru/aws-sales-data-lake">View system ↗</a>
-          </article>
-          <article class="project reveal">
-            <div class="project-number">03 / DATAOPS</div>
-            <h3>Data Contract Validator</h3>
-            <p>A dependency-free quality gate that catches schema, type, nullability, and range failures before analytics or model training.</p>
-            <div class="tags"><span>Python</span><span>Data Quality</span><span>CI/CD</span></div>
-            <a href="https://github.com/mysurakuchuru/data-contract-validator">View system ↗</a>
-          </article>
-        </div>
-      </section>
+            <div class="frame hero-frame">
+              <div class="frame-title"><span>┌─── whoami</span><span class="online"><i></i> ONLINE</span></div>
+              <div class="identity-grid">
+                <div>
+                  <p class="kicker"># Mysura Reddy Kuchuru</p>
+                  <h1>Data systems that move from <span>signal</span> to <span>decision.</span></h1>
+                  <p class="lede">Data Engineer · Analytics Engineer · Data Analyst</p>
+                  <p class="summary">I build reliable pipelines, dimensional models, quality controls, and decision layers—then create responsible paths for AI and ML on top of governed data.</p>
+                  <div class="action-row">
+                    <a class="terminal-button primary" href="#projects">./explore-work</a>
+                    <a class="terminal-button" href="resume.html">cat resume.html</a>
+                    <a class="terminal-button" href="mailto:kuchurumysurareddy@gmail.com">send --email</a>
+                  </div>
+                </div>
+                <div class="system-card">
+                  <div class="system-card-head"><span>system.profile</span><span>v2026.07</span></div>
+                  <dl>
+                    <div><dt>LOCATION</dt><dd>Charlotte, NC</dd></div>
+                    <div><dt>FOCUS</dt><dd>Data / Analytics / AI</dd></div>
+                    <div><dt>STATUS</dt><dd class="success">OPEN_TO_WORK</dd></div>
+                    <div><dt>MODE</dt><dd>BUILD + LEARN</dd></div>
+                  </dl>
+                  <div class="mini-chart" aria-label="Capability signal visualization">
+                    <span style="--v:48%"></span><span style="--v:66%"></span><span style="--v:58%"></span><span style="--v:82%"></span><span style="--v:72%"></span><span style="--v:94%"></span><span style="--v:86%"></span><span style="--v:100%"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      <section id="systems" class="section systems-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Future-ready architecture</p>
-          <h2>From events to intelligence.</h2>
-          <p>A practical direction: govern the data first, then make AI useful, observable, and accountable.</p>
-        </div>
-        <div class="system-flow reveal" aria-label="Data to intelligence architecture">
-          <div><b>01</b><strong>Ingest</strong><span>batch · APIs · events</span></div>
-          <i>→</i>
-          <div><b>02</b><strong>Model</strong><span>warehouse · dbt · quality</span></div>
-          <i>→</i>
-          <div><b>03</b><strong>Decide</strong><span>BI · metrics · experiments</span></div>
-          <i>→</i>
-          <div><b>04</b><strong>Learn</strong><span>ML · RAG · agents</span></div>
-        </div>
-        <p class="roadmap-note reveal">ML, RAG, and agent capabilities are a forward roadmap—not a claim that every current project already contains them.</p>
-      </section>
+            <div class="metric-strip">
+              <div><span>14.9M</span><small>raw trip records</small></div>
+              <div><span>14.17M</span><small>curated records</small></div>
+              <div><span>3</span><small>primary role tracks</small></div>
+              <div><span>100%</span><small>projects preserved</small></div>
+            </div>
+          </section>
 
-      <section id="experience" class="section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Experience graph</p>
-          <h2>Engineering context. Analytical judgment.</h2>
-        </div>
-        <div class="timeline">
-          <article class="reveal"><span>Data Analyst</span><h3>Tower Auto Group</h3><p>Claims and recovery analytics, reconciliation, reporting automation, and process improvement.</p></article>
-          <article class="reveal"><span>Data Science & Visualization Intern</span><h3>App Orchid</h3><p>LLM and NLP applications, Flask APIs, cloud automation, and enterprise dashboards.</p></article>
-          <article class="reveal"><span>Software Engineer</span><h3>Capgemini</h3><p>Java and SQL development, API integrations, and AWS foundations.</p></article>
-        </div>
-      </section>
+          <section id="featured" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ head -n 3 featured.systems</p>
+            <div class="section-intro">
+              <div><small>01 / FEATURED</small><h2>Systems with evidence.</h2></div>
+              <p>Completed work first. Future capabilities are labeled as roadmaps—not quietly smuggled in as buzzwords.</p>
+            </div>
+            <div class="featured-grid">
+              <article class="feature-card feature-main">
+                <div class="card-head"><span>01</span><span>ANALYTICS PLATFORM</span><span class="success">PRODUCTION CASE STUDY</span></div>
+                <div class="dashboard-preview">
+                  <div class="preview-grid"><i></i><i></i><i></i><i></i></div>
+                  <div class="preview-line"><span></span></div>
+                  <div class="preview-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <h3>NYC Taxi Analytics Platform</h3>
+                <p>Python ingestion, PostgreSQL layers, dimensional modeling, dbt documentation and tests, analytics views, indexing, and Tableau decision support across 14.9M raw trips.</p>
+                <div class="tags"><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>dbt</span><span>Tableau</span></div>
+                <a href="https://github.com/mysurakuchuru/nyc-taxi-analytics-platform" target="_blank" rel="noreferrer">open repository ↗</a>
+              </article>
+              <article class="feature-card">
+                <div class="card-head"><span>02</span><span>CLOUD DATA</span></div>
+                <div class="cloud-glyph" aria-hidden="true">S3 → GLUE → PARQUET</div>
+                <h3>AWS Sales Data Lake</h3>
+                <p>Serverless batch engineering with AWS Glue, PySpark, S3, IAM, and CloudFormation.</p>
+                <div class="tags"><span>AWS</span><span>PySpark</span><span>IaC</span></div>
+                <a href="https://github.com/mysurakuchuru/aws-sales-data-lake" target="_blank" rel="noreferrer">open repository ↗</a>
+              </article>
+              <article class="feature-card">
+                <div class="card-head"><span>03</span><span>DATAOPS</span></div>
+                <div class="contract-glyph" aria-hidden="true"><span>schema</span><b>✓</b><span>types</span><b>✓</b><span>ranges</span><b>✓</b></div>
+                <h3>Data Contract Validator</h3>
+                <p>A tested, dependency-free quality gate for analytics datasets and ML features.</p>
+                <div class="tags"><span>Python</span><span>Quality</span><span>CI/CD</span></div>
+                <a href="https://github.com/mysurakuchuru/data-contract-validator" target="_blank" rel="noreferrer">open repository ↗</a>
+              </article>
+            </div>
+          </section>
 
-      <section class="section contact reveal">
-        <p class="eyebrow">Next signal</p>
-        <h2>Let’s build the layer<br />between data and decisions.</h2>
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:kuchurumysurareddy@gmail.com">Start a conversation</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/kuchurumysurareddy/">LinkedIn ↗</a>
-        </div>
-      </section>
-    </main>
+          <section id="skills" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ neofetch --data-stack</p>
+            <div class="frame">
+              <div class="frame-title"><span>┌─── capability matrix</span><span>5 layers loaded</span></div>
+              <div class="skill-matrix">
+                <article><b>DATA ENGINEERING</b><p>Python · SQL · PostgreSQL · Pandas · ETL/ELT · APIs · dimensional modeling</p></article>
+                <article><b>ANALYTICS ENGINEERING</b><p>dbt · semantic metrics · data contracts · testing · documentation · lineage direction</p></article>
+                <article><b>ANALYSIS & BI</b><p>Exploratory analysis · reconciliation · KPI reporting · Tableau · Power BI · Excel</p></article>
+                <article><b>CLOUD & DELIVERY</b><p>AWS · GCP · Docker · Kubernetes · CloudFormation · GitHub Actions · Git</p></article>
+                <article><b>AI & ML DIRECTION</b><p>LLM applications · RAG · NLP · semantic search · feature quality · responsible evaluation</p></article>
+              </div>
+            </div>
+            <div class="package-line"><span>19 packages loaded</span><code>#Python #SQL #PostgreSQL #dbt #Pandas #Tableau #PowerBI #AWS #GCP #Docker #Kubernetes #OpenAI #RAG #NLP</code></div>
+          </section>
 
-    <footer><span>© <span id="year"></span> Mysura Reddy Kuchuru</span><span>Charlotte, North Carolina</span></footer>
+          <section id="experience" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ cat experience.log</p>
+            <div class="log-meta"><span>3 entries found</span><span>engineering + analytics</span></div>
+            <div class="experience-list">
+              <article class="log-entry">
+                <div class="log-head"><span>┌─── Tower Auto Group</span><time>Data Analyst</time></div>
+                <div class="log-body"><p>Claims and recovery analytics, reconciliation, dashboard automation, KPI reporting, and process improvement.</p><ul><li>Translate operational records into decision-ready reporting.</li><li>Build controls that improve consistency and reduce manual effort.</li></ul></div>
+              </article>
+              <article class="log-entry">
+                <div class="log-head"><span>┌─── App Orchid</span><time>Data Science & Visualization Intern</time></div>
+                <div class="log-body"><p>LLM and NLP applications, Flask APIs, cloud automation, and enterprise dashboards.</p><ul><li>Connected applied AI workflows with usable business interfaces.</li><li>Supported visualization and application delivery across the stack.</li></ul></div>
+              </article>
+              <article class="log-entry">
+                <div class="log-head"><span>┌─── Capgemini</span><time>Software Engineer</time></div>
+                <div class="log-body"><p>Java and SQL development, API integrations, AWS foundations, and enterprise engineering practices.</p><ul><li>Built a software foundation for reliable data-facing services.</li><li>Worked within structured delivery and collaboration environments.</li></ul></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="projects" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ ls -la ~/projects/</p>
+            <div class="project-toolbar">
+              <span>8 entries — original work preserved</span>
+              <div role="group" aria-label="Filter projects">
+                <button class="filter active" data-filter="all">all</button>
+                <button class="filter" data-filter="data">data</button>
+                <button class="filter" data-filter="ai">ai/ml</button>
+                <button class="filter" data-filter="systems">systems</button>
+              </div>
+            </div>
+            <div class="project-list">
+              <article data-category="data"><div class="project-index">01</div><div><h3>MapReduce Text Analytics</h3><p>Word counts, bigrams, stop-word filtering, and inverted indexing with Python and mrjob.</p><span>#big-data #text-analytics #mapreduce</span></div><a href="https://github.com/mysurakuchuru/mapreduce-text-analytics">↗</a></article>
+              <article data-category="data ai"><div class="project-index">02</div><div><h3>Faculty Web Data Pipeline</h3><p>Responsible web-to-dataset collection producing structured CSV and JSONL for analysis and NLP.</p><span>#etl #beautifulsoup #nlp-roadmap</span></div><a href="https://github.com/mysurakuchuru/faculty-web-data-pipeline">↗</a></article>
+              <article data-category="systems"><div class="project-index">03</div><div><h3>Round-Robin Workload Scheduler</h3><p>Tested scheduling metrics connected to batch processing and shared ML compute concepts.</p><span>#algorithms #testing #ml-infrastructure</span></div><a href="https://github.com/mysurakuchuru/round-robin-workload-scheduler">↗</a></article>
+              <article data-category="ai systems"><div class="project-index">04</div><div><h3>Adaptive Python Games</h3><p>An interpretable online-learning baseline that updates behavior from observed moves.</p><span>#online-learning #statistics #python</span></div><a href="https://github.com/mysurakuchuru/adaptive-python-games">↗</a></article>
+              <article data-category="data systems"><div class="project-index">05</div><div><h3>C# Data Foundations</h3><p>Streaming metrics and anomaly-rule processing foundations for typed .NET data services.</p><span>#dotnet #stream-processing #mlnet-roadmap</span></div><a href="https://github.com/mysurakuchuru/csharp-data-foundations">↗</a></article>
+              <article data-category="data ai"><div class="project-index">06</div><div><h3>Data-Informed Outreach</h3><p>Responsible RevOps infrastructure documentation with governed analytics and AI extensions.</p><span>#revops #governance #responsible-ai</span></div><a href="https://github.com/mysurakuchuru/data-informed-outreach-infrastructure">↗</a></article>
+              <article data-category="systems ai"><div class="project-index">07</div><div><h3>Data & AI Portfolio</h3><p>The source system for this terminal résumé, accessibility layer, and project narrative.</p><span>#github-pages #frontend #portfolio</span></div><a href="https://github.com/mysurakuchuru/data-ai-portfolio">↗</a></article>
+              <article data-category="systems"><div class="project-index">08</div><div><h3>Data and AI Security Research</h3><p>Defensive MITM research connected to trustworthy data movement and model-serving integrity.</p><span>#data-security #ai-security #research</span></div><a href="https://github.com/mysurakuchuru/Man-in-the-Middle-Attack">↗</a></article>
+            </div>
+          </section>
+
+          <section id="architecture" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ render architecture.graph</p>
+            <div class="section-intro"><div><small>05 / SYSTEM DESIGN</small><h2>From events to intelligence.</h2></div><p>The future-facing architecture is grounded in a simple rule: earn the right to use AI by making the data trustworthy first.</p></div>
+            <div class="architecture-flow">
+              <div><small>01</small><b>INGEST</b><span>batch · APIs · events</span></div><i>→</i>
+              <div><small>02</small><b>GOVERN</b><span>contracts · quality · lineage</span></div><i>→</i>
+              <div><small>03</small><b>MODEL</b><span>warehouse · dbt · metrics</span></div><i>→</i>
+              <div><small>04</small><b>DECIDE</b><span>BI · experiments · APIs</span></div><i>→</i>
+              <div><small>05</small><b>LEARN</b><span>ML · RAG · agents</span></div>
+            </div>
+            <p class="roadmap-disclaimer"><span>NOTE:</span> ML, RAG, and agent components are a forward roadmap. Current delivered capabilities remain documented inside each repository.</p>
+          </section>
+
+          <section id="education" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ cat education.json</p>
+            <div class="education-grid">
+              <article><span>2024</span><h3>M.S. Computer Science</h3><p>New York Institute of Technology</p></article>
+              <article><span>B.TECH</span><h3>Electronics & Communication Engineering</h3><p>Jawaharlal Nehru Technological University</p></article>
+            </div>
+          </section>
+
+          <section id="roadmap" class="terminal-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ cat roadmap.yml</p>
+            <div class="roadmap-grid">
+              <article><span>NOW</span><h3>Trust the data</h3><p>Testing, documentation, contracts, reproducibility, and observable delivery.</p></article>
+              <article><span>NEXT</span><h3>Scale the decisions</h3><p>Orchestration, lakehouse patterns, semantic metrics, and controlled experimentation.</p></article>
+              <article><span>FUTURE</span><h3>Operationalize intelligence</h3><p>Feature monitoring, evaluated RAG, responsible agents, and human-centered AI.</p></article>
+            </div>
+          </section>
+
+          <section id="contact" class="terminal-section contact-section">
+            <p class="command-line"><span>guest@mysura</span><b>:</b><em>~</em> $ cat ~/.profile</p>
+            <div class="frame contact-frame">
+              <div class="frame-title"><span>┌─── environment</span><span>available</span></div>
+              <code>export LOCATION="Charlotte, North Carolina"</code>
+              <code>export ROLES="Data Engineer | Analytics Engineer | Data Analyst"</code>
+              <code>export EMAIL="kuchurumysurareddy@gmail.com"</code>
+              <div class="contact-links">
+                <a href="mailto:kuchurumysurareddy@gmail.com">Email ↗</a>
+                <a href="https://www.linkedin.com/in/kuchurumysurareddy/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a href="https://github.com/mysurakuchuru" target="_blank" rel="noreferrer">GitHub ↗</a>
+                <button id="copy-email" type="button">Copy email</button>
+              </div>
+            </div>
+            <p class="final-prompt"><span>guest@mysura</span><b>:</b><em>~</em> $ <i class="terminal-cursor" aria-hidden="true"></i></p>
+          </section>
+
+          <footer><span>// © <span id="year"></span> Mysura Reddy Kuchuru</span><span>built with evidence, not buzzwords</span></footer>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="command-menu">
+      <form method="dialog" class="command-dialog">
+        <div><span>command.palette</span><button aria-label="Close">esc</button></div>
+        <p>Jump to a section</p>
+        <a href="#whoami">00 / whoami</a><a href="#featured">01 / featured</a><a href="#skills">02 / skills</a><a href="#experience">03 / experience</a><a href="#projects">04 / projects</a><a href="#contact">08 / contact</a>
+      </form>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>
