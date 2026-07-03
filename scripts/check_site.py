@@ -40,6 +40,16 @@ def audit_page(page: str) -> None:
     parser.feed((ROOT / page).read_text())
     assert parser.language == "en", f"{page}: missing language"
     assert len(parser.ids) == len(set(parser.ids)), f"{page}: duplicate ids"
+    if page == "index.html":
+        required = {
+            "boot-screen",
+            "boot-output",
+            "boot-progress-bar",
+            "boot-progress-label",
+            "boot-skip",
+            "main",
+        }
+        assert required.issubset(parser.ids), f"{page}: incomplete boot interface"
 
     for link in parser.links:
         if link.startswith("#"):
