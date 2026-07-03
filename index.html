@@ -10,13 +10,46 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mysurakuchuru.github.io/" />
     <title>Mysura Reddy Kuchuru — Data & AI Portfolio</title>
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="booting">
+    <div id="boot-screen" class="boot-screen" role="dialog" aria-modal="true" aria-labelledby="boot-title">
+      <div class="boot-grid-bg" aria-hidden="true"></div>
+      <div class="boot-terminal">
+        <div class="boot-bar">
+          <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span id="boot-title">MRK/OS — secure portfolio console</span>
+          <span>tty01</span>
+        </div>
+        <div class="boot-body">
+          <aside class="boot-identity" aria-hidden="true">
+            <div class="boot-mark">MRK<span>/OS</span></div>
+            <p>DATA SYSTEMS KERNEL</p>
+            <dl>
+              <div><dt>BUILD</dt><dd>2026.07</dd></div>
+              <div><dt>ARCH</dt><dd>data-ai</dd></div>
+              <div><dt>HOST</dt><dd>github-pages</dd></div>
+              <div><dt>MODE</dt><dd>portfolio</dd></div>
+            </dl>
+          </aside>
+          <section class="boot-console" aria-label="Boot progress">
+            <div id="boot-output" class="boot-output" aria-live="polite" aria-atomic="false"></div>
+            <span class="boot-caret" aria-hidden="true"></span>
+          </section>
+        </div>
+        <div class="boot-footer">
+          <div class="boot-progress"><span id="boot-progress-bar"></span></div>
+          <span id="boot-progress-label">INITIALIZING 00%</span>
+        </div>
+      </div>
+      <button id="boot-skip" class="boot-skip" type="button">[esc] skip boot</button>
+    </div>
+    <noscript><style>#boot-screen{display:none!important}body{overflow:auto!important}</style></noscript>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="noise" aria-hidden="true"></div>
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>

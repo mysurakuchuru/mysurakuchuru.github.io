@@ -4,8 +4,112 @@ const commandButton = document.getElementById("command-button");
 const commandMenu = document.getElementById("command-menu");
 const progress = document.getElementById("scroll-progress");
 const toast = document.getElementById("toast");
+const bootScreen = document.getElementById("boot-screen");
+const bootOutput = document.getElementById("boot-output");
+const bootProgressBar = document.getElementById("boot-progress-bar");
+const bootProgressLabel = document.getElementById("boot-progress-label");
+const bootSkip = document.getElementById("boot-skip");
 
-const savedTheme = localStorage.getItem("portfolio-theme");
+const bootSteps = [
+  ["ssh guest@mysura-data.dev", "[ OK ] encrypted portfolio session established"],
+  ["mount /dev/portfolio", "[ OK ] 14 repositories indexed · integrity verified"],
+  ["validate --contracts --quality", "[ OK ] schema · tests · documentation · lineage-ready"],
+  ["load capability.matrix", "[ OK ] Python · SQL · dbt · AWS · BI · applied AI"],
+  ["connect opportunity.network", "[ OK ] Charlotte, NC · data roles · OPEN_TO_WORK"],
+  ["source ~/.data-ai-theme", "[ OK ] terminal interface · accessibility profile loaded"],
+  ["render --format=terminal --sections=all", "[ OK ] system ready — welcome, guest"],
+];
+
+let bootFinished = false;
+let bootCancelled = false;
+
+function wait(milliseconds) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+}
+
+function appendBootLine(text, type) {
+  const line = document.createElement("div");
+  line.className = `boot-line ${type}`;
+  if (type === "result" && text.startsWith("[ OK ]")) {
+    const status = document.createElement("span");
+    status.className = "ok";
+    status.textContent = "[ OK ]";
+    line.append(status, document.createTextNode(text.slice(6)));
+  } else {
+    line.textContent = text;
+  }
+  bootOutput.appendChild(line);
+}
+
+function rememberBoot() {
+  try {
+    sessionStorage.setItem("mrk-portfolio-booted", "true");
+  } catch {
+    // Storage can be unavailable in privacy modes; the boot still works.
+  }
+}
+
+function finishBoot(animate = true) {
+  if (bootFinished) return;
+  bootFinished = true;
+  bootCancelled = true;
+  rememberBoot();
+  document.body.classList.remove("booting");
+  if (animate) {
+    bootScreen.classList.add("exit");
+    window.setTimeout(() => {
+      bootScreen.hidden = true;
+      bootScreen.setAttribute("aria-hidden", "true");
+    }, 540);
+  } else {
+    bootScreen.hidden = true;
+    bootScreen.setAttribute("aria-hidden", "true");
+  }
+}
+
+async function runBootSequence() {
+  for (let index = 0; index < bootSteps.length; index += 1) {
+    if (bootCancelled) return;
+    const [command, result] = bootSteps[index];
+    appendBootLine(command, "command");
+    await wait(145);
+    if (bootCancelled) return;
+    appendBootLine(result, "result");
+    const percentage = Math.round(((index + 1) / bootSteps.length) * 100);
+    bootProgressBar.style.width = `${percentage}%`;
+    bootProgressLabel.textContent = `${percentage === 100 ? "READY" : "LOADING"} ${String(percentage).padStart(2, "0")}%`;
+    await wait(index === bootSteps.length - 1 ? 420 : 300);
+  }
+  finishBoot(true);
+}
+
+const forceBoot = new URLSearchParams(window.location.search).get("boot") === "1";
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let bootSeen = false;
+try {
+  bootSeen = sessionStorage.getItem("mrk-portfolio-booted") === "true";
+} catch {
+  bootSeen = false;
+}
+
+bootSkip.addEventListener("click", () => finishBoot(true));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !bootFinished) finishBoot(true);
+});
+
+if (!forceBoot && (bootSeen || reducedMotion)) {
+  finishBoot(false);
+} else {
+  window.requestAnimationFrame(runBootSequence);
+  window.setTimeout(() => finishBoot(true), 8000);
+}
+
+let savedTheme = null;
+try {
+  savedTheme = localStorage.getItem("portfolio-theme");
+} catch {
+  savedTheme = null;
+}
 const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
   ? "light"
   : "dark";
@@ -13,7 +117,11 @@ root.dataset.theme = savedTheme || preferredTheme;
 
 themeToggle.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-  localStorage.setItem("portfolio-theme", root.dataset.theme);
+  try {
+    localStorage.setItem("portfolio-theme", root.dataset.theme);
+  } catch {
+    // Theme switching still works when storage is unavailable.
+  }
 });
 
 function updateProgress() {
