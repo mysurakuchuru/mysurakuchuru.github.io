@@ -110,10 +110,8 @@ try {
 } catch {
   savedTheme = null;
 }
-const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-  ? "light"
-  : "dark";
-root.dataset.theme = savedTheme || preferredTheme;
+const defaultTheme = "dark";
+root.dataset.theme = savedTheme || defaultTheme;
 
 themeToggle.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
@@ -160,6 +158,70 @@ document.querySelectorAll(".filter").forEach((button) => {
       const categories = project.dataset.category.split(" ");
       project.classList.toggle("hidden", filter !== "all" && !categories.includes(filter));
     });
+  });
+});
+
+const roleLensContent = {
+  engineer: {
+    eyebrow: "ROLE LENS // DATA ENGINEERING",
+    title: "Build the trustworthy data plane.",
+    copy: "Pipelines, APIs, SQL models, cloud foundations, data quality, and documentation that make downstream analytics and ML safer to use.",
+  },
+  analytics: {
+    eyebrow: "ROLE LENS // ANALYTICS ENGINEERING",
+    title: "Turn governed data into reusable decisions.",
+    copy: "Dimensional models, dbt-style testing, semantic metrics, lineage direction, and dashboard-ready datasets that keep business logic consistent.",
+  },
+  analyst: {
+    eyebrow: "ROLE LENS // DATA ANALYSIS",
+    title: "Find the signal and explain it clearly.",
+    copy: "Exploratory analysis, reconciliations, KPI reporting, operational dashboards, and stakeholder-ready narratives grounded in evidence.",
+  },
+  aiml: {
+    eyebrow: "ROLE LENS // AI + ML",
+    title: "Make intelligence depend on clean foundations.",
+    copy: "RAG, NLP, semantic search, feature quality, and evaluation patterns built on trustworthy data instead of ungoverned buzzwords.",
+  },
+};
+
+const roleButtons = document.querySelectorAll(".role-switcher button[data-role]");
+const roleEyebrow = document.getElementById("role-eyebrow");
+const roleTitle = document.getElementById("role-title");
+const roleCopy = document.getElementById("role-copy");
+
+roleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = roleLensContent[button.dataset.role];
+    if (!content) return;
+    roleButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+    roleEyebrow.textContent = content.eyebrow;
+    roleTitle.textContent = content.title;
+    roleCopy.textContent = content.copy;
+  });
+});
+
+document.querySelectorAll("[data-tilt-card]").forEach((card) => {
+  if (reducedMotion) return;
+  card.addEventListener("pointermove", (event) => {
+    const bounds = card.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+    const xRatio = x / bounds.width - 0.5;
+    const yRatio = y / bounds.height - 0.5;
+    card.style.setProperty("--mx", `${Math.round((x / bounds.width) * 100)}%`);
+    card.style.setProperty("--my", `${Math.round((y / bounds.height) * 100)}%`);
+    card.style.setProperty("--ry", `${(xRatio * 3.2).toFixed(2)}deg`);
+    card.style.setProperty("--rx", `${(-yRatio * 3.2).toFixed(2)}deg`);
+  });
+  card.addEventListener("pointerleave", () => {
+    card.style.removeProperty("--mx");
+    card.style.removeProperty("--my");
+    card.style.removeProperty("--rx");
+    card.style.removeProperty("--ry");
   });
 });
 
